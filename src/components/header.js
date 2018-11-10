@@ -1,33 +1,27 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { navigate } from 'gatsby'
+import { Layout, Menu } from 'antd'
+
+const menuNavigation = ({ _item, key, _keyPath }) => {
+  navigate(key)
+}
+
+// const setSelectedMenuItem = ({ item, key, selectedKeys }) => {}
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
+  <Layout.Header>
+    <Menu
+      theme="dark"
+      mode="horizontal"
+      defaultSelectedKeys={['/']}
+      style={{ lineHeight: '64px' }}
+      onClick={menuNavigation}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
+      <Menu.Item key="/">{siteTitle}</Menu.Item>
+      <Menu.Item key="/about/">About</Menu.Item>
+      <Menu.Item key="/contact/">Contact</Menu.Item>
+    </Menu>
+  </Layout.Header>
 )
 
 export default Header
