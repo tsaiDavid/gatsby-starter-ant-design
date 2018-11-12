@@ -1,6 +1,7 @@
 import React from 'react'
 import { navigate } from 'gatsby'
-import { Layout, Menu } from 'antd'
+import { Layout as AntLayout, Menu } from 'antd'
+const { Header } = AntLayout
 
 const menuNavigation = ({ _item, key, _keyPath }) => {
   navigate(key)
@@ -8,10 +9,9 @@ const menuNavigation = ({ _item, key, _keyPath }) => {
 
 // const setSelectedMenuItem = ({ item, key, selectedKeys }) => {}
 
-const Header = ({ siteTitle }) => (
-  <Layout.Header>
+const AppHeader = ({ siteTitle }) => (
+  <Header style={{ background: '#fff' }}>
     <Menu
-      theme="dark"
       mode="horizontal"
       defaultSelectedKeys={['/']}
       style={{ lineHeight: '64px' }}
@@ -21,7 +21,7 @@ const Header = ({ siteTitle }) => (
       <Menu.Item key="/about/">About</Menu.Item>
       <Menu.Item key="/contact/">Contact</Menu.Item>
     </Menu>
-  </Layout.Header>
+  </Header>
 )
 
-export default Header
+export default AppHeader

@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Layout from '../components/layout'
+import AppLayout from '../components/appLayout'
 
 const AboutPage = () => (
-  <Layout>
+  <AppLayout>
     <h1>About Us</h1>
     <p>Learn more about us here.</p>
     <Link to="/">Go back to the homepage</Link>
-  </Layout>
+  </AppLayout>
 )
 
 export default AboutPage
